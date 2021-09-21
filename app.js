@@ -2,7 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors")
-dotenv.config({ path: `${__dirname}/config.env` });
+
+const config = require("./config")
 
 // console.log(process.env.U_SECRET_KEY);
 const app = express();
