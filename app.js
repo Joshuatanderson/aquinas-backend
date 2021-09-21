@@ -10,6 +10,7 @@ const app = express();
 // routes
 const dataRouter = require("./routes/dataRoutes");
 const searchRouter = require("./routes/searchRoutes");
+const catchallRouter = require("./routes/catchallRoute");
 
 // middleware
 
@@ -24,5 +25,6 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/data", dataRouter);
 app.use("/api/v1/search", searchRouter);
+app.use("*", catchallRouter)
 
 module.exports = app;
