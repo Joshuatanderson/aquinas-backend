@@ -1,8 +1,8 @@
 exports.catchall = async(req, res, next) => {
 	try {
-		await res.status(203).json({
-			status: "success",
-			data: undefined,
+		await res.status(404).json({
+			status: "error",
+			data: {message: "uh-oh.  This looks like a bad request."},
 		});
 		client.close();
 	} catch (err){
